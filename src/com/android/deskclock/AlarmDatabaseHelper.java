@@ -55,8 +55,8 @@ class AlarmDatabaseHelper extends SQLiteOpenHelper {
         String insertMe = "INSERT INTO alarms " +
                 "(hour, minutes, daysofweek, alarmtime, enabled, vibrate, " +
                 " message, alert) VALUES ";
-        db.execSQL(insertMe + "(8, 30, 31, 0, 0, 1, '', '');");
-        db.execSQL(insertMe + "(9, 00, 96, 0, 0, 1, '', '');");
+        db.execSQL(insertMe + "(7, 00, 31, 0, 0, 1, '', '');");
+        db.execSQL(insertMe + "(16, 15, 31, 0, 0, 1, '', '');");
     }
 
     @Override
