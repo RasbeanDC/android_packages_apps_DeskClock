@@ -19,6 +19,7 @@ public class CircleTimerView extends View {
 
 
     private int mRedColor;
+    private int mBlueColor;
     private int mWhiteColor;
     private long mIntervalTime = 0;
     private long mIntervalStartTime = -1;
@@ -127,6 +128,7 @@ public class CircleTimerView extends View {
         mPaint.setStyle(Paint.Style.STROKE);
         mWhiteColor = mResources.getColor(R.color.clock_white);
         mRedColor = mResources.getColor(R.color.clock_red);
+        mBlueColor = mResources.getColor(R.color.clock_blue);
         mScreenDensity = mResources.getDisplayMetrics().density;
         mFill.setAntiAlias(true);
         mFill.setStyle(Paint.Style.FILL);
@@ -174,8 +176,8 @@ public class CircleTimerView extends View {
             redPercent = (redPercent > 1 && mTimerMode) ? 1 : redPercent;
 
             float whitePercent = 1 - (redPercent > 1 ? 1 : redPercent);
-            // draw red arc here
-            mPaint.setColor(mRedColor);
+            // draw blue arc here
+            mPaint.setColor(mBlueColor);
             if (mTimerMode){
                 canvas.drawArc (mArcRect, 270, - redPercent * 360 , false, mPaint);
             } else {
